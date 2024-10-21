@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>StudentCode.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #5f826b; font-style: italic;}
+.s4 { color: #7a7e85;}
+.s5 { color: #6aab73;}
+.s6 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+StudentCode.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">ArrayList</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">HashMap</span><span class="s2">;</span>
+<span class="s3">/**</span>
+ <span class="s3">* Programmer: Sadad Yusuf.</span>
+ <span class="s3">* Date: 09-28-2024</span>
+ <span class="s3">* Description: Creating A Student Account.</span>
+ <span class="s3">*Pseudocode:</span>
+ <span class="s3">*          -Create a class called Student</span>
+
+ <span class="s3">*          -Your Student object should have the following attributes:</span>
+ <span class="s3">*          -Name, Age, An ArrayList of classes they're in,</span>
+ <span class="s3">*          -Map(DayOfWeek, ArraylisOfClasses), Map(nameOfClass, IntegerStartTime)</span>
+
+ <span class="s3">*         -constructor that takes in the attributes and creates a Student object</span>
+ <span class="s3">*          -Use get() method for name, age, and ArrayList of classes</span>
+ <span class="s3">*          -Take a day of the week and return the start time(s) of each class the Student has that day</span>
+
+ <span class="s3">*          create a Student object and do the following operations:</span>
+ <span class="s3">-print the name, age, and classes for that Student using the get() methods</span>
+ <span class="s3">*          -print the time(s) that your Student's classes start for one day of the week</span>
+ <span class="s3">*/</span>
+<span class="s0">public class </span><span class="s1">StudentCode </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s4">// Create an ArrayList for storing class names</span>
+        <span class="s1">ArrayList</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">classes </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">classes</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s5">&quot;SQL&quot;</span><span class="s2">);</span>
+        <span class="s1">classes</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s5">&quot;C++&quot;</span><span class="s2">);</span>
+        <span class="s1">classes</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s5">&quot;Java&quot;</span><span class="s2">);</span>
+        <span class="s1">classes</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s5">&quot;Precalculus&quot;</span><span class="s2">);</span>
+
+        <span class="s4">// Make a HashMap to store the student's schedule</span>
+        <span class="s4">// The key is the day of the week, and the value is an ArrayList of classes on that day.</span>
+        <span class="s1">HashMap</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">ArrayList</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt;&gt; </span><span class="s1">schedule </span><span class="s2">= </span><span class="s0">new </span><span class="s1">HashMap</span><span class="s2">&lt;&gt;();</span>
+
+        <span class="s4">// Add Monday classes to the schedule</span>
+        <span class="s1">ArrayList</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">mondayClasses </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">mondayClasses</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s5">&quot;SQL&quot;</span><span class="s2">);</span>
+        <span class="s1">schedule</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s5">&quot;Monday&quot;</span><span class="s2">, </span><span class="s1">mondayClasses</span><span class="s2">);  </span><span class="s4">// Map Monday to its classes</span>
+
+        <span class="s4">// Add Tuesday classes to the schedule</span>
+        <span class="s1">ArrayList</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">tuesdayClasses </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">tuesdayClasses</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s5">&quot;Precalculus&quot;</span><span class="s2">);</span>
+        <span class="s1">schedule</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s5">&quot;Tuesday&quot;</span><span class="s2">, </span><span class="s1">tuesdayClasses</span><span class="s2">);  </span><span class="s4">// Map Tuesday to its classes</span>
+
+        <span class="s4">// Add Wednesday classes to the schedule</span>
+        <span class="s1">ArrayList</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">wednesdayClasses </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">wednesdayClasses</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s5">&quot;C++&quot;</span><span class="s2">);</span>
+        <span class="s1">wednesdayClasses</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s5">&quot;SQL&quot;</span><span class="s2">);</span>
+        <span class="s1">schedule</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s5">&quot;Wednesday&quot;</span><span class="s2">, </span><span class="s1">wednesdayClasses</span><span class="s2">);  </span><span class="s4">// Map Wednesday to its classes</span>
+
+        <span class="s4">// Add Thursday classes to the schedule</span>
+        <span class="s1">ArrayList</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">thursdayClasses </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">thursdayClasses</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s5">&quot;Precalculus&quot;</span><span class="s2">);</span>
+        <span class="s1">schedule</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s5">&quot;Thursday&quot;</span><span class="s2">, </span><span class="s1">thursdayClasses</span><span class="s2">);  </span><span class="s4">// Map Thursday to its classes</span>
+
+        <span class="s4">// Add Saturday classes to the schedule</span>
+        <span class="s1">ArrayList</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">saturdayClasses </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">saturdayClasses</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s5">&quot;Java&quot;</span><span class="s2">);</span>
+        <span class="s1">schedule</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s5">&quot;Saturday&quot;</span><span class="s2">, </span><span class="s1">saturdayClasses</span><span class="s2">);  </span><span class="s4">// Map Saturday to its classes</span>
+
+        <span class="s4">// Create a HashMap for storing the start times of each class.</span>
+        <span class="s4">// The key is the class name, and the value is the start time.</span>
+        <span class="s1">HashMap</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">Integer</span><span class="s2">&gt; </span><span class="s1">startTime </span><span class="s2">= </span><span class="s0">new </span><span class="s1">HashMap</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">startTime</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s5">&quot;SQL&quot;</span><span class="s2">, </span><span class="s6">6</span><span class="s2">);          </span><span class="s4">// SQL class starts at 6Am</span>
+        <span class="s1">startTime</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s5">&quot;C++&quot;</span><span class="s2">, </span><span class="s6">1</span><span class="s2">);          </span><span class="s4">// C++ class starts at 1Pm</span>
+        <span class="s1">startTime</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s5">&quot;Java&quot;</span><span class="s2">, </span><span class="s6">9</span><span class="s2">);         </span><span class="s4">// Java class starts at 9AM</span>
+        <span class="s1">startTime</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s5">&quot;Precalculus&quot;</span><span class="s2">, </span><span class="s6">3</span><span class="s2">);  </span><span class="s4">// Precalculus class starts at 3PM</span>
+
+        <span class="s4">// Create a Student object with the name &quot;Sadad Yusuf&quot;, age 25, and the initialized classes, schedule, and startTime maps.</span>
+        <span class="s1">Student sadad </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Student</span><span class="s2">(</span><span class="s5">&quot;Sadad Yusuf&quot;</span><span class="s2">, </span><span class="s6">25</span><span class="s2">, </span><span class="s1">classes</span><span class="s2">, </span><span class="s1">schedule</span><span class="s2">, </span><span class="s1">startTime</span><span class="s2">);</span>
+
+        <span class="s4">// Print out the student's name using the getName() method</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Name: &quot; </span><span class="s2">+ </span><span class="s1">sadad</span><span class="s2">.</span><span class="s1">getName</span><span class="s2">());</span>
+
+        <span class="s4">// Print out the student's age using the getAge() method</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Age: &quot; </span><span class="s2">+ </span><span class="s1">sadad</span><span class="s2">.</span><span class="s1">getAge</span><span class="s2">());</span>
+
+        <span class="s4">// Print out the list of classes the student is enrolled in using the getClasses() method</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Classes: &quot; </span><span class="s2">+ </span><span class="s1">sadad</span><span class="s2">.</span><span class="s1">getClasses</span><span class="s2">());</span>
+
+        <span class="s4">// Print the start time of the student's classes on Monday using the getStartTime() method</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Monday's Class starts at: &quot; </span><span class="s2">+ </span><span class="s1">sadad</span><span class="s2">.</span><span class="s1">getStartTime</span><span class="s2">(</span><span class="s5">&quot;Monday&quot;</span><span class="s2">));</span>
+
+        <span class="s4">// Test for another day (e.g., Wednesday) to see the multiple start times for classes on that day</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Wednesday's Classes start at: &quot; </span><span class="s2">+ </span><span class="s1">sadad</span><span class="s2">.</span><span class="s1">getStartTime</span><span class="s2">(</span><span class="s5">&quot;Wednesday&quot;</span><span class="s2">));</span>
+
+        <span class="s4">// Test for a day with no classes to check the &quot;no classes&quot; output</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Sunday's Class: &quot; </span><span class="s2">+ </span><span class="s1">sadad</span><span class="s2">.</span><span class="s1">getStartTime</span><span class="s2">(</span><span class="s5">&quot;Sunday&quot;</span><span class="s2">));</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
